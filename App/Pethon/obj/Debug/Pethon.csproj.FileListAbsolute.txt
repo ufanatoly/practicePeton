@@ -1,0 +1,10 @@
+D:\Pethon\App\Pethon\bin\Debug\Pethon.exe.config
+D:\Pethon\App\Pethon\bin\Debug\Pethon.exe
+D:\Pethon\App\Pethon\bin\Debug\Pethon.pdb
+D:\Pethon\App\Pethon\obj\Debug\Pethon.csprojAssemblyReference.cache
+D:\Pethon\App\Pethon\obj\Debug\Pethon.Form1.resources
+D:\Pethon\App\Pethon\obj\Debug\Pethon.Properties.Resources.resources
+D:\Pethon\App\Pethon\obj\Debug\Pethon.csproj.GenerateResource.cache
+D:\Pethon\App\Pethon\obj\Debug\Pethon.csproj.CoreCompileInputs.cache
+D:\Pethon\App\Pethon\obj\Debug\Pethon.exe
+D:\Pethon\App\Pethon\obj\Debug\Pethon.pdb
