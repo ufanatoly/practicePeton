@@ -8,3 +8,4 @@ D:\Pethon\App\Pethon\obj\Debug\Pethon.csproj.GenerateResource.cache
 D:\Pethon\App\Pethon\obj\Debug\Pethon.csproj.CoreCompileInputs.cache
 D:\Pethon\App\Pethon\obj\Debug\Pethon.exe
 D:\Pethon\App\Pethon\obj\Debug\Pethon.pdb
+D:\Pethon\App\Pethon\obj\Debug\Pethon.csproj.ResolveComReference.cache

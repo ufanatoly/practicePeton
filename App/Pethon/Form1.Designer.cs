@@ -35,26 +35,27 @@ namespace Pethon
             this.all_sites_tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.all_sites_tableTableAdapter = new Pethon.EQUI_PIPEDataSetTableAdapters.all_sites_tableTableAdapter();
             this.tableAdapterManager = new Pethon.EQUI_PIPEDataSetTableAdapters.TableAdapterManager();
+            this.label_valuesTableAdapter = new Pethon.EQUI_PIPEDataSetTableAdapters.label_valuesTableAdapter();
+            this.labelsTableAdapter = new Pethon.EQUI_PIPEDataSetTableAdapters.labelsTableAdapter();
             this.all_sites_tableBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.all_sites_tableBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.labelsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.labelsTableAdapter = new Pethon.EQUI_PIPEDataSetTableAdapters.labelsTableAdapter();
             this.labelvaluesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label_valuesTableAdapter = new Pethon.EQUI_PIPEDataSetTableAdapters.label_valuesTableAdapter();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.eQUIPIPEDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.eQUI_PIPEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.all_sites_tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.all_sites_tableBindingNavigator)).BeginInit();
@@ -107,6 +108,14 @@ namespace Pethon
             this.tableAdapterManager.site_tableTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Pethon.EQUI_PIPEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // label_valuesTableAdapter
+            // 
+            this.label_valuesTableAdapter.ClearBeforeFill = true;
+            // 
+            // labelsTableAdapter
+            // 
+            this.labelsTableAdapter.ClearBeforeFill = true;
+            // 
             // all_sites_tableBindingNavigator
             // 
             this.all_sites_tableBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -138,13 +147,38 @@ namespace Pethon
             this.all_sites_tableBindingNavigator.TabIndex = 0;
             this.all_sites_tableBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 24);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
             // 
             // bindingNavigatorMovePreviousItem
@@ -153,34 +187,28 @@ namespace Pethon
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 20);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -202,44 +230,26 @@ namespace Pethon
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // all_sites_tableBindingNavigatorSaveItem
             // 
             this.all_sites_tableBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.all_sites_tableBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("all_sites_tableBindingNavigatorSaveItem.Image")));
             this.all_sites_tableBindingNavigatorSaveItem.Name = "all_sites_tableBindingNavigatorSaveItem";
-            this.all_sites_tableBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.all_sites_tableBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
             this.all_sites_tableBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.all_sites_tableBindingNavigatorSaveItem.Click += new System.EventHandler(this.all_sites_tableBindingNavigatorSaveItem_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(465, 40);
+            this.dataGridView1.Location = new System.Drawing.Point(456, 68);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(467, 398);
+            this.dataGridView1.Size = new System.Drawing.Size(476, 301);
             this.dataGridView1.TabIndex = 2;
             // 
             // labelsBindingSource
@@ -247,18 +257,10 @@ namespace Pethon
             this.labelsBindingSource.DataMember = "labels";
             this.labelsBindingSource.DataSource = this.eQUI_PIPEDataSet;
             // 
-            // labelsTableAdapter
-            // 
-            this.labelsTableAdapter.ClearBeforeFill = true;
-            // 
             // labelvaluesBindingSource
             // 
             this.labelvaluesBindingSource.DataMember = "label_values";
             this.labelvaluesBindingSource.DataSource = this.eQUI_PIPEDataSet;
-            // 
-            // label_valuesTableAdapter
-            // 
-            this.label_valuesTableAdapter.ClearBeforeFill = true;
             // 
             // listBox1
             // 
@@ -275,11 +277,19 @@ namespace Pethon
             this.eQUIPIPEDataSetBindingSource.DataSource = this.eQUI_PIPEDataSet;
             this.eQUIPIPEDataSetBindingSource.Position = 0;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(456, 399);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(476, 22);
+            this.textBox1.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 450);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.all_sites_tableBindingNavigator);
@@ -326,6 +336,7 @@ namespace Pethon
         private System.Windows.Forms.BindingSource labelvaluesBindingSource;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.BindingSource eQUIPIPEDataSetBindingSource;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

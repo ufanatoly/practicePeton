@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,20 +10,64 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace Pethon
 {
     public partial class Form1 : Form
     {
         string connectionString = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = D:\Pethon\Model\EQUI_PIPE.mdb";
         string strSQL = "select A.label_value " +
-            "from label_values A, labels B " +
-            "where A.label_value_index = B.label_value_index and B.label_name_index = 3";
+            "from label_values A, labels B, linkage C " +
+            "where A.label_value_index = B.label_value_index and B.label_name_index = 3 and C.label_file_index = 5 and C.linkage_index = B.linkage_index ";
+
+        string[] strArrayName;
+        string[] strArrayValue;
+        string[] strArrayStatus;
         public Form1()
         {
             InitializeComponent();
 
             //string[] models = { "EQUI_PIPE" };
             //listBox1.DataSource
+
+            //Создаём приложение.
+            Microsoft.Office.Interop.Excel.Application ObjExcel = new Microsoft.Office.Interop.Excel.Application();
+            //Открываем книгу.                                                                                                                                                        
+            Microsoft.Office.Interop.Excel.Workbook ObjWorkBook = ObjExcel.Workbooks.Open(@"D:\Pethon\Model\Atributes.xlsx", 0, false, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+            //Выбираем таблицу(лист).
+            Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheet;
+            ObjWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)ObjWorkBook.Sheets[1];
+
+            // Указываем номер столбца (таблицы Excel) из которого будут считываться данные.
+            int numCol = 1;
+
+            Range usedColumn = ObjWorkSheet.UsedRange.Columns[numCol];
+            System.Array myvalues = (System.Array)usedColumn.Cells.Value2;
+            strArrayName = myvalues.OfType<object>().Select(o => o.ToString()).ToArray();
+
+            numCol = 2;
+
+            usedColumn = ObjWorkSheet.UsedRange.Columns[numCol];
+            myvalues = (System.Array)usedColumn.Cells.Value2;
+            strArrayValue = myvalues.OfType<object>().Select(o => o.ToString()).ToArray();
+
+
+            // Выходим из программы Excel.
+            ObjExcel.Quit();
+
+            textBox1.Text = strArrayValue[0];
+
+            strArrayStatus = new String[strArrayName.Length];
+
+            for (int i = 0; i < strArrayName.Length; i++)
+            {
+                strArrayStatus[i] = "Ошибка";
+            }
+
+
+            
+
         }
 
         private void all_sites_tableBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -48,24 +93,22 @@ namespace Pethon
             OleDbCommand command = new OleDbCommand(strSQL, connection);
 
             OleDbDataAdapter dataAdapter = new OleDbDataAdapter(strSQL, connection);
-            // Create a dataset object and fill with data using data adapter's Fill method 
             DataSet dataSet = new DataSet();
             
             dataAdapter.Fill(dataSet, "label_values");
-
-            // Attach dataset's DefaultView to the combobox 
-            //listBox1.DataSource = dataSet.Tables[0];
-            //listBox1.DataSource(command.ExecuteScalar());
-
-            //string[] models = command.ExecuteScalar().ToString;
-            //listBox1.DataSource
-            //listBox1.Items.AddRange(models);
-
-
-
-             //Attach dataset's DefaultView to the combobox 
-        listBox1.DataSource = dataSet.Tables[0].DefaultView;
+            listBox1.DataSource = dataSet.Tables[0].DefaultView;
             listBox1.DisplayMember = "label_value";
+
+
+
+            dataGridView1.Columns.Add("Index", "Атрибут");
+            dataGridView1.Columns.Add("Value", "Значение атрибута");
+            dataGridView1.Columns.Add("Status", "Статус");
+
+            for (int i = 0; i < strArrayName.Length; i++)
+            {
+                dataGridView1.Rows.Add(new object[] { strArrayName[i], strArrayValue[i], strArrayStatus[i] });
+            }
 
 
 
