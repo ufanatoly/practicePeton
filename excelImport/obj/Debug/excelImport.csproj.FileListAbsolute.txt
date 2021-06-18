@@ -1,0 +1,6 @@
+D:\Pethon\excelImport\bin\Debug\excelImport.dll
+D:\Pethon\excelImport\bin\Debug\excelImport.pdb
+D:\Pethon\excelImport\obj\Debug\excelImport.csprojAssemblyReference.cache
+D:\Pethon\excelImport\obj\Debug\excelImport.csproj.CoreCompileInputs.cache
+D:\Pethon\excelImport\obj\Debug\excelImport.dll
+D:\Pethon\excelImport\obj\Debug\excelImport.pdb

@@ -43,8 +43,8 @@ namespace Pethon
             this.eQUIPIPEDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.загрузитьМоделиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadModelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.атрибутыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.дополнитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -160,7 +160,7 @@ namespace Pethon
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem,
+            this.fileToolStripMenuItem,
             this.атрибутыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -168,20 +168,20 @@ namespace Pethon
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // файлToolStripMenuItem
+            // fileToolStripMenuItem
             // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.загрузитьМоделиToolStripMenuItem});
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
-            this.файлToolStripMenuItem.Text = "Файл";
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadModelsToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.fileToolStripMenuItem.Text = "Файл";
             // 
-            // загрузитьМоделиToolStripMenuItem
+            // loadModelsToolStripMenuItem
             // 
-            this.загрузитьМоделиToolStripMenuItem.Name = "загрузитьМоделиToolStripMenuItem";
-            this.загрузитьМоделиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.загрузитьМоделиToolStripMenuItem.Text = "Загрузить модели";
-            this.загрузитьМоделиToolStripMenuItem.Click += new System.EventHandler(this.загрузитьМоделиToolStripMenuItem_Click);
+            this.loadModelsToolStripMenuItem.Name = "loadModelsToolStripMenuItem";
+            this.loadModelsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loadModelsToolStripMenuItem.Text = "Загрузить модели";
+            this.loadModelsToolStripMenuItem.Click += new System.EventHandler(this.loadModelsToolStripMenuItem_Click);
             // 
             // атрибутыToolStripMenuItem
             // 
@@ -194,7 +194,7 @@ namespace Pethon
             // дополнитьToolStripMenuItem
             // 
             this.дополнитьToolStripMenuItem.Name = "дополнитьToolStripMenuItem";
-            this.дополнитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.дополнитьToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.дополнитьToolStripMenuItem.Text = "Дополнить";
             this.дополнитьToolStripMenuItem.Click += new System.EventHandler(this.дополнитьToolStripMenuItem_Click);
             // 
@@ -269,8 +269,8 @@ namespace Pethon
         private System.Windows.Forms.BindingSource eQUIPIPEDataSetBindingSource;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem загрузитьМоделиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadModelsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem атрибутыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem дополнитьToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
