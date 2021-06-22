@@ -45,8 +45,8 @@ namespace Pethon
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadModelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.атрибутыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.дополнитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atributesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -112,11 +112,12 @@ namespace Pethon
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(397, 91);
+            this.dataGridView1.Location = new System.Drawing.Point(298, 74);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(524, 292);
+            this.dataGridView1.Size = new System.Drawing.Size(393, 237);
             this.dataGridView1.TabIndex = 2;
             // 
             // labelsBindingSource
@@ -132,10 +133,10 @@ namespace Pethon
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(12, 91);
+            this.listBox1.Location = new System.Drawing.Point(9, 74);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(363, 292);
+            this.listBox1.Size = new System.Drawing.Size(273, 238);
             this.listBox1.TabIndex = 3;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -149,9 +150,10 @@ namespace Pethon
             this.button1.BackColor = System.Drawing.SystemColors.Highlight;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(789, 392);
+            this.button1.Location = new System.Drawing.Point(592, 318);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 38);
+            this.button1.Size = new System.Drawing.Size(99, 31);
             this.button1.TabIndex = 4;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = false;
@@ -161,10 +163,11 @@ namespace Pethon
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.атрибутыToolStripMenuItem});
+            this.atributesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(944, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(708, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -173,45 +176,47 @@ namespace Pethon
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadModelsToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.fileToolStripMenuItem.Text = "Файл";
             // 
             // loadModelsToolStripMenuItem
             // 
             this.loadModelsToolStripMenuItem.Name = "loadModelsToolStripMenuItem";
-            this.loadModelsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loadModelsToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.loadModelsToolStripMenuItem.Text = "Загрузить модели";
             this.loadModelsToolStripMenuItem.Click += new System.EventHandler(this.loadModelsToolStripMenuItem_Click);
             // 
-            // атрибутыToolStripMenuItem
+            // atributesToolStripMenuItem
             // 
-            this.атрибутыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.дополнитьToolStripMenuItem});
-            this.атрибутыToolStripMenuItem.Name = "атрибутыToolStripMenuItem";
-            this.атрибутыToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
-            this.атрибутыToolStripMenuItem.Text = "Атрибуты";
+            this.atributesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem});
+            this.atributesToolStripMenuItem.Name = "atributesToolStripMenuItem";
+            this.atributesToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.atributesToolStripMenuItem.Text = "Атрибуты";
             // 
-            // дополнитьToolStripMenuItem
+            // addToolStripMenuItem
             // 
-            this.дополнитьToolStripMenuItem.Name = "дополнитьToolStripMenuItem";
-            this.дополнитьToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
-            this.дополнитьToolStripMenuItem.Text = "Дополнить";
-            this.дополнитьToolStripMenuItem.Click += new System.EventHandler(this.дополнитьToolStripMenuItem_Click);
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem.Text = "Дополнить";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 392);
+            this.textBox1.Location = new System.Drawing.Point(9, 318);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(363, 22);
+            this.textBox1.Size = new System.Drawing.Size(273, 20);
             this.textBox1.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 63);
+            this.label1.Location = new System.Drawing.Point(9, 51);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 20);
+            this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Модели";
             // 
@@ -219,17 +224,18 @@ namespace Pethon
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(393, 63);
+            this.label2.Location = new System.Drawing.Point(295, 51);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 9;
             this.label2.Text = "Атрибуты";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 450);
+            this.ClientSize = new System.Drawing.Size(708, 366);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -238,6 +244,7 @@ namespace Pethon
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Приложение";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -271,8 +278,8 @@ namespace Pethon
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadModelsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem атрибутыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem дополнитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem atributesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
