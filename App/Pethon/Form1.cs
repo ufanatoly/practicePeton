@@ -57,24 +57,28 @@ namespace Pethon
             
         }
            
-
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void showRows ()
         {
-
             dataGridView1.Rows.Clear();
             int index = listBox1.SelectedIndex;
 
-            try {
+            try
+            {
                 for (int j = 0; j < strArrayName[index].Length; j++)
                 {
-                    dataGridView1.Rows.Add(new object[] { strArrayName[index][j], /*strArrayValue[i], strArrayStatus[2][j]*/ });
+                    dataGridView1.Rows.Add(new object[] { strArrayName[index][j], strArrayStatus[index][j]});
                 }
             }
             catch (IndexOutOfRangeException)
             {
                 System.Windows.Forms.MessageBox.Show("Pael out of Norm city");
             }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            showRows();
+            
         }
 
         private void loadModelsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,8 +124,7 @@ namespace Pethon
                     strArrayName = new string[files.Length][];
                     strArrayStatus = new string[files.Length][];
 
-
-                    for(int i = 0; i< files.Length; i++)
+                    for (int i = 0; i< files.Length; i++)
                     {
                         strPathDbs[i] = Directory.GetFiles(files[i], "*mdb")[0];
                         strPathAtributes[i] = Directory.GetFiles(files[i], "*xlsx")[0];
@@ -152,24 +155,15 @@ namespace Pethon
                         myvalues = (System.Array)usedColumn.Cells.Value2;
                         strArrayValue[i] = myvalues.OfType<object>().Select(o => o.ToString()).ToArray();
 
+                        strArrayStatus[i] = new string[strArrayValue[i].Length];
 
                         // Выходим из программы Excel.
                         ObjExcel.Quit();
-
-                      
-
-                        
-
-
-
-
                     }
                     listBox1.Items.AddRange(strVueNames);
 
                     
                 }
-
-                
             }
 
         }
@@ -187,13 +181,6 @@ namespace Pethon
              DataSet dataSet = new DataSet();
 
              dataAdapter.Fill(dataSet, "label_values");
-             //listBox1.DataSource = dataSet.Tables[0].DefaultView;
-             //listBox1.DisplayMember = "label_value";
-
-
-
-             
-            
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
@@ -257,11 +244,9 @@ namespace Pethon
                 connection.Open();
                 command = new OleDbCommand(strSQL, connection);
                 command.ExecuteNonQuery();
-                connection.Close();
-
-                 
-                
+                connection.Close();                
             }
+
             for (int j = 0; j < eqiupmentNames.Count(); j++)
             {
                 strSQL = "select max(label_line_number) from labels where linkage_index = " + eqiupmentNames[j];
@@ -282,6 +267,12 @@ namespace Pethon
                     connection.Close();
                 }
             }
+
+            for (int i = 0; i < n; i++)
+            {
+                strArrayStatus[index][i] = "добавлен";
+            }
+            showRows();
         }
     }
 }

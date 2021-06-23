@@ -26,3 +26,17 @@ C:\PPractice\practicePeton\App\Pethon\obj\Debug\Pethon.csproj.CoreCompileInputs.
 C:\PPractice\practicePeton\App\Pethon\obj\Debug\Pethon.csproj.CopyComplete
 C:\PPractice\practicePeton\App\Pethon\obj\Debug\Pethon.exe
 C:\PPractice\practicePeton\App\Pethon\obj\Debug\Pethon.pdb
+C:\PPractice\peton1\App\Pethon\bin\Debug\Pethon.exe.config
+C:\PPractice\peton1\App\Pethon\bin\Debug\Pethon.exe
+C:\PPractice\peton1\App\Pethon\bin\Debug\Pethon.pdb
+C:\PPractice\peton1\App\Pethon\bin\Debug\excelImport.dll
+C:\PPractice\peton1\App\Pethon\bin\Debug\excelImport.pdb
+C:\PPractice\peton1\App\Pethon\obj\Debug\Pethon.csprojAssemblyReference.cache
+C:\PPractice\peton1\App\Pethon\obj\Debug\Pethon.csproj.ResolveComReference.cache
+C:\PPractice\peton1\App\Pethon\obj\Debug\Pethon.Form1.resources
+C:\PPractice\peton1\App\Pethon\obj\Debug\Pethon.Properties.Resources.resources
+C:\PPractice\peton1\App\Pethon\obj\Debug\Pethon.csproj.GenerateResource.cache
+C:\PPractice\peton1\App\Pethon\obj\Debug\Pethon.csproj.CoreCompileInputs.cache
+C:\PPractice\peton1\App\Pethon\obj\Debug\Pethon.csproj.CopyComplete
+C:\PPractice\peton1\App\Pethon\obj\Debug\Pethon.exe
+C:\PPractice\peton1\App\Pethon\obj\Debug\Pethon.pdb
