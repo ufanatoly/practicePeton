@@ -1,0 +1,6 @@
+D:\Pethon\mdbWrite\bin\Debug\mdbWrite.dll
+D:\Pethon\mdbWrite\bin\Debug\mdbWrite.pdb
+D:\Pethon\mdbWrite\obj\Debug\mdbWrite.csprojAssemblyReference.cache
+D:\Pethon\mdbWrite\obj\Debug\mdbWrite.csproj.CoreCompileInputs.cache
+D:\Pethon\mdbWrite\obj\Debug\mdbWrite.dll
+D:\Pethon\mdbWrite\obj\Debug\mdbWrite.pdb
