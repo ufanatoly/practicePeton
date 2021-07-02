@@ -36,6 +36,9 @@
     <Reference Include="excelImport">
       <HintPath>..\..\excelImport\bin\Debug\excelImport.dll</HintPath>
     </Reference>
+    <Reference Include="mdbWrite">
+      <HintPath>..\..\..\Pethon\mdbWrite\bin\Debug\mdbWrite.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

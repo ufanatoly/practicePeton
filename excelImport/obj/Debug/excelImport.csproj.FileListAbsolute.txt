@@ -4,3 +4,10 @@ D:\Pethon\excelImport\obj\Debug\excelImport.csprojAssemblyReference.cache
 D:\Pethon\excelImport\obj\Debug\excelImport.csproj.CoreCompileInputs.cache
 D:\Pethon\excelImport\obj\Debug\excelImport.dll
 D:\Pethon\excelImport\obj\Debug\excelImport.pdb
+D:\Pethon — копия\excelImport\bin\Debug\excelImport.dll
+D:\Pethon — копия\excelImport\bin\Debug\excelImport.pdb
+D:\Pethon — копия\excelImport\obj\Debug\excelImport.csprojAssemblyReference.cache
+D:\Pethon — копия\excelImport\obj\Debug\excelImport.csproj.ResolveComReference.cache
+D:\Pethon — копия\excelImport\obj\Debug\excelImport.csproj.CoreCompileInputs.cache
+D:\Pethon — копия\excelImport\obj\Debug\excelImport.dll
+D:\Pethon — копия\excelImport\obj\Debug\excelImport.pdb

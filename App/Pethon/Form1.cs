@@ -1,22 +1,15 @@
-﻿using Microsoft.Office.Interop.Excel;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Data.OleDb;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using excelImport;
 using System.IO;
+using excelImport;
+using mdbWrite;
 
 namespace Pethon
 {
     public partial class Form1 : Form
-    {
+    {     
+
         string connectionStringMain = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = ";
         string strSQL = "select A.label_value " +
             "from label_values A, labels B, linkage C " +
@@ -26,32 +19,20 @@ namespace Pethon
         string[][] strArrayValue;
         string[][] strArrayStatus;
 
-        int[] names;
-        int[] values;
-
-
         string[] strPathDbs;
         string[] strPathAtributes;
         string[] strVueNames;
 
-
-
-        Class1 class1 = new Class1();
         public Form1()
         {
-            InitializeComponent();
-            //string test = "D:\PethonTest\Model1\Model1.mdb";
-
+            InitializeComponent();   
         }
-
-       
 
         private void Form1_Load(object sender, EventArgs e)
         {
             
         }
-
-           
+                   
         private void showRows ()
         {
             dataGridView1.Rows.Clear();
@@ -72,35 +53,14 @@ namespace Pethon
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            showRows();
-            
+            showRows();            
         }
 
         private void loadModelsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Process.Start("explorer.exe", @"C:\Users");
-            /*using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
-            {
-                openFileDialog1.InitialDirectory = "c:\\";
-                openFileDialog1.Filter = "Intergraph vue files (*.vue)|*.vue";
-                openFileDialog1.FilterIndex = 2;
-                openFileDialog1.RestoreDirectory = true;
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    string fileSelected = openFileDialog1.FileName;
-                    
+            excelImport.ExcelImport excel = new ExcelImport();
 
-                    fileSelected = fileSelected.Substring(0, fileSelected.Length - 3);
-                    connectionString = connectionString + fileSelected + "mdb";
-                    textBox1.Text = class1.PrintDay();
-                    selectBd();
-                    
-
-                }
-            }*/
-
-            dataGridView1.Columns.Add("Index", "Атрибут");
-            //dataGridView1.Columns.Add("Value", "Значение атрибута");
+            dataGridView1.Columns.Add("Index", "Атрибут");            
             dataGridView1.Columns.Add("Status", "Статус");
             using (var fbd = new FolderBrowserDialog())
             {
@@ -109,9 +69,7 @@ namespace Pethon
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
                     string[] files = Directory.GetDirectories(fbd.SelectedPath);
-
-                    //System.Windows.Forms.MessageBox.Show("Найдено моделей: " + files.Length.ToString(), "Найдено");
-                    //System.Windows.Forms.MessageBox.Show("Найдено моделей: " + files[0].ToString(), "Найдено");
+                   
                     strPathDbs = new string[files.Length];
                     strPathAtributes = new string[files.Length];
                     strVueNames = new string[files.Length];
@@ -123,145 +81,60 @@ namespace Pethon
                     {
                         strPathDbs[i] = Directory.GetFiles(files[i], "*mdb2")[0];
                         strPathAtributes[i] = Directory.GetFiles(files[i], "*xlsx")[0];
-                        //System.Windows.Forms.MessageBox.Show("Найдено моделей: " + filesDirectory.Length.ToString(), "Найдено");
-
-
+                        
                         System.IO.File.Move(strPathDbs[i], strPathDbs[i].Substring(0, strPathDbs[i].Length - 1));
                         strPathDbs[i] = strPathDbs[i].Substring(0, strPathDbs[i].Length - 1);
 
                         string[] temp = strPathDbs[i].Split('\\');
                         strVueNames[i] = temp[temp.Length - 1].Split('.')[0] ;
 
-                        //laodFromExcel(strPathAtributes[i]);
-
-                        //Создаём приложение.
-                        Microsoft.Office.Interop.Excel.Application ObjExcel = new Microsoft.Office.Interop.Excel.Application();
-                        //Открываем книгу.                                                                                                                                                        
-                        Microsoft.Office.Interop.Excel.Workbook ObjWorkBook = ObjExcel.Workbooks.Open(strPathAtributes[i], 0, false, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-                        //Выбираем таблицу(лист).
-                        Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheet;
-                        ObjWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)ObjWorkBook.Sheets[1];
-
-                        // Указываем номер столбца (таблицы Excel) из которого будут считываться данные.
-                        int numCol = 1;
-
-                        Range usedColumn = ObjWorkSheet.UsedRange.Columns[numCol];
-                        System.Array myvalues = (System.Array)usedColumn.Cells.Value2;
-                        strArrayName[i] = myvalues.OfType<object>().Select(o => o.ToString()).ToArray();
-
-                        numCol = 2;
-
-                        usedColumn = ObjWorkSheet.UsedRange.Columns[numCol];
-                        myvalues = (System.Array)usedColumn.Cells.Value2;
-                        strArrayValue[i] = myvalues.OfType<object>().Select(o => o.ToString()).ToArray();
-
+                        //загрузка атрибутов из excel с помощью dll
+                        strArrayName[i] = excel.LoadArrayNames(strPathAtributes[i]);
+                        strArrayValue[i] = excel.LoadArrayValues(strPathAtributes[i]);
+                       
                         strArrayStatus[i] = new string[strArrayValue[i].Length];
-
-                        // Выходим из программы Excel.
-                        ObjExcel.Quit();
                     }
-                    listBox1.Items.AddRange(strVueNames);
-
-                    
+                    listBox1.Items.AddRange(strVueNames);                    
                 }
             }
 
         }
-
-
-
       
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            mdbWrite.MdbWrite mdb = new MdbWrite();
+
             int index = listBox1.SelectedIndex;
+            int n = 0;
             string connectionString = connectionStringMain;
-            try
+            if(index != -1)
             {
                 connectionString += strPathDbs[index];
+                n = strArrayName[index].Length;
             }
-            catch (IndexOutOfRangeException)
+            else 
             {
+                
                 MessageBox.Show("Что-то пошло не так");
+                this.Close();
+                return;
+                Application.Exit();
             }
             MessageBox.Show(connectionString);
 
-            strSQL = "select C.linkage_index " +
-                "from label_values A, labels B, linkage C " +
-                "where A.label_value_index = B.label_value_index and B.label_name_index = 3 and C.label_file_index = 5 and C.linkage_index = B.linkage_index and A.label_value NOT LIKE  ('%End%')";
-            OleDbConnection connection = new OleDbConnection(connectionString);
-            connection.Open();
-            OleDbCommand command = new OleDbCommand(strSQL, connection);
-            OleDbDataReader dataReader = command.ExecuteReader();
-            List<int> eqiupmentNames = new List<int>();
-            while (dataReader.Read())
-            {
-                eqiupmentNames.Add(dataReader.GetInt32(0));
-            }
-            connection.Close();
-            int n = strArrayName[index].Length;
-            names = new int[n];
-            values = new int[n];
+                     
 
-            for (int i = 0; i < n; i++)
-            {                
-                strSQL = "select max(label_name_index) from label_names";
-                connection = new OleDbConnection(connectionString);
-                connection.Open();
-                command = new OleDbCommand(strSQL, connection);
-                int ind = (int) command.ExecuteScalar();
-                ind++;
-                names[i] = ind;
-                connection.Close();
-                strSQL = "insert into label_names values (" + ind + ", '" + strArrayName[index][i] + "', 1, -1, -1)";
-                connection = new OleDbConnection(connectionString);
-                connection.Open();
-                command = new OleDbCommand(strSQL, connection);
-                command.ExecuteNonQuery();
-                connection.Close();
-
-                strSQL = "select max(label_value_index) from label_values";
-                connection = new OleDbConnection(connectionString);
-                connection.Open();
-                command = new OleDbCommand(strSQL, connection);
-                ind = (int)command.ExecuteScalar();
-                ind++;
-                values[i] = ind;
-                connection.Close();
-                strSQL = "insert into label_values values (" + ind + ", '" + strArrayValue[index][i] + "', 0)";
-                connection = new OleDbConnection(connectionString);
-                connection.Open();
-                command = new OleDbCommand(strSQL, connection);
-                command.ExecuteNonQuery();
-                connection.Close();                
-            }
-
-            for (int j = 0; j < eqiupmentNames.Count(); j++)
-            {
-                strSQL = "select max(label_line_number) from labels where linkage_index = " + eqiupmentNames[j];
-                connection = new OleDbConnection(connectionString);
-                connection.Open();
-                command = new OleDbCommand(strSQL, connection);
-                int ind = (int)((Int16)command.ExecuteScalar());
-                ind++;
-                connection.Close();
-
-                for (int i = 0; i < n; i++)
-                {
-                    strSQL = "insert into labels values (" + eqiupmentNames[j] + ", '" + names[i] + "', '" + values[i] + "', " + ind + ", 0)";
-                    connection = new OleDbConnection(connectionString);
-                    connection.Open();
-                    command = new OleDbCommand(strSQL, connection);
-                    command.ExecuteNonQuery();
-                    connection.Close();
-                }
-            }
+            //c помощью dll добовляем атрибуты
+            mdb.addAtributes(connectionString, strArrayName[index], strArrayValue[index]);
 
             for (int i = 0; i < n; i++)
             {
                 strArrayStatus[index][i] = "добавлен";
             }
 
-                                 
+            OleDbConnection connection = new OleDbConnection(connectionString);
+            OleDbCommand command;
+
             for (int i = 0; i < n; i++)
             {
                 strSQL = "select Count(1) from label_names where label_name = '" + strArrayName[index][i] + "'";
@@ -275,35 +148,15 @@ namespace Pethon
                 }
                 connection.Close();
             }
-            
-
-
-
             showRows();
-
-
-
-            //при считывании из mdb2 в mdb
-            //при окончании оперции из mdb в mdb2            
-            //запрос на проверку добавилось или нет
-            //обработать исключения (файлы, уже добавлено)
-
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-
-        private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            // Determine if text has changed in the textbox by comparing to original text.
-            
-        }
+        { }       
 
         private void Form1_Closing(object sender, FormClosingEventArgs e)
         {
+            if(strPathDbs != null)
             for (int i = 0; i < strPathDbs.Length; i++)
                 System.IO.File.Move(strPathDbs[i], strPathDbs[i] + "2");
         }

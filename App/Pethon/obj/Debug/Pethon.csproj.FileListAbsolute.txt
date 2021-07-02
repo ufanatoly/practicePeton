@@ -40,3 +40,19 @@ C:\PPractice\peton1\App\Pethon\obj\Debug\Pethon.csproj.CoreCompileInputs.cache
 C:\PPractice\peton1\App\Pethon\obj\Debug\Pethon.csproj.CopyComplete
 C:\PPractice\peton1\App\Pethon\obj\Debug\Pethon.exe
 C:\PPractice\peton1\App\Pethon\obj\Debug\Pethon.pdb
+D:\Pethon — копия\App\Pethon\bin\Debug\Pethon.exe.config
+D:\Pethon — копия\App\Pethon\bin\Debug\Pethon.exe
+D:\Pethon — копия\App\Pethon\bin\Debug\Pethon.pdb
+D:\Pethon — копия\App\Pethon\bin\Debug\excelImport.dll
+D:\Pethon — копия\App\Pethon\bin\Debug\excelImport.pdb
+D:\Pethon — копия\App\Pethon\obj\Debug\Pethon.csprojAssemblyReference.cache
+D:\Pethon — копия\App\Pethon\obj\Debug\Pethon.csproj.ResolveComReference.cache
+D:\Pethon — копия\App\Pethon\obj\Debug\Pethon.Form1.resources
+D:\Pethon — копия\App\Pethon\obj\Debug\Pethon.Properties.Resources.resources
+D:\Pethon — копия\App\Pethon\obj\Debug\Pethon.csproj.GenerateResource.cache
+D:\Pethon — копия\App\Pethon\obj\Debug\Pethon.csproj.CoreCompileInputs.cache
+D:\Pethon — копия\App\Pethon\obj\Debug\Pethon.csproj.CopyComplete
+D:\Pethon — копия\App\Pethon\obj\Debug\Pethon.exe
+D:\Pethon — копия\App\Pethon\obj\Debug\Pethon.pdb
+D:\Pethon — копия\App\Pethon\bin\Debug\mdbWrite.dll
+D:\Pethon — копия\App\Pethon\bin\Debug\mdbWrite.pdb
