@@ -15,13 +15,8 @@ namespace Pethon
             "from label_values A, labels B, linkage C " +
             "where A.label_value_index = B.label_value_index and B.label_name_index = 3 and C.label_file_index = 5 and C.linkage_index = B.linkage_index and A.label_value NOT LIKE  ('%End%')";
         
-        string[][] strArrayName;
-        string[][] strArrayValue;
-        string[][] strArrayStatus;
-
-        string[] strPathDbs;
-        string[] strPathAtributes;
-        string[] strVueNames;
+        string[][] strArrayName, strArrayValue, strArrayStatus;
+        string[] strPathDbs, strPathAtributes, strVueNames;
 
         public Form1()
         {
@@ -35,14 +30,14 @@ namespace Pethon
                    
         private void showRows ()
         {
-            dataGridView1.Rows.Clear();
-            int index = listBox1.SelectedIndex;
+            atributesGridView1.Rows.Clear();
+            int index = modelsBox1.SelectedIndex;
 
             try
             {
                 for (int j = 0; j < strArrayName[index].Length; j++)
                 {
-                    dataGridView1.Rows.Add(new object[] { strArrayName[index][j], strArrayStatus[index][j]});
+                    atributesGridView1.Rows.Add(new object[] { strArrayName[index][j], strArrayStatus[index][j]});
                 }
             }
             catch (IndexOutOfRangeException)
@@ -60,8 +55,8 @@ namespace Pethon
         {
             excelImport.ExcelImport excel = new ExcelImport();
 
-            dataGridView1.Columns.Add("Index", "Атрибут");            
-            dataGridView1.Columns.Add("Status", "Статус");
+            atributesGridView1.Columns.Add("Index", "Атрибут");            
+            atributesGridView1.Columns.Add("Status", "Статус");
             using (var fbd = new FolderBrowserDialog())
             {
                 DialogResult result = fbd.ShowDialog();
@@ -94,7 +89,7 @@ namespace Pethon
                        
                         strArrayStatus[i] = new string[strArrayValue[i].Length];
                     }
-                    listBox1.Items.AddRange(strVueNames);                    
+                    modelsBox1.Items.AddRange(strVueNames);                    
                 }
             }
 
@@ -104,7 +99,7 @@ namespace Pethon
         {
             mdbWrite.MdbWrite mdb = new MdbWrite();
 
-            int index = listBox1.SelectedIndex;
+            int index = modelsBox1.SelectedIndex;
             int n = 0;
             string connectionString = connectionStringMain;
             if(index != -1)
@@ -117,10 +112,9 @@ namespace Pethon
                 
                 MessageBox.Show("Что-то пошло не так");
                 this.Close();
-                return;
-                Application.Exit();
+                return;                
             }
-            MessageBox.Show(connectionString);
+            
 
                      
 

@@ -56,3 +56,5 @@ D:\Pethon — копия\App\Pethon\obj\Debug\Pethon.exe
 D:\Pethon — копия\App\Pethon\obj\Debug\Pethon.pdb
 D:\Pethon — копия\App\Pethon\bin\Debug\mdbWrite.dll
 D:\Pethon — копия\App\Pethon\bin\Debug\mdbWrite.pdb
+D:\Pethon\App\Pethon\bin\Debug\mdbWrite.dll
+D:\Pethon\App\Pethon\bin\Debug\mdbWrite.pdb

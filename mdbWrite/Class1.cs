@@ -25,7 +25,7 @@ namespace mdbWrite
             {
                 eqiupmentNames.Add(dataReader.GetInt32(0));
             }
-            connection.Close();
+            
 
             int n = strArrayName.Length;
             int[] names = new int[n];
@@ -37,61 +37,43 @@ namespace mdbWrite
             for (int i = 0; i < n; i++)
             {
                 strSQL = "select max(label_name_index) from label_names";
-                connection = new OleDbConnection(connectionString);
-                connection.Open();
-                command = new OleDbCommand(strSQL, connection);
+                                command = new OleDbCommand(strSQL, connection);
                 int ind = (int)command.ExecuteScalar();
                 ind++;
-                names[i] = ind;
-                connection.Close();
+                names[i] = ind;                
 
-
-                strSQL = "insert into label_names values (" + ind + ", '" + strArrayName[i] + "', 1, -1, -1)";
-                connection = new OleDbConnection(connectionString);
-                connection.Open();
+                strSQL = "insert into label_names values (" + ind + ", '" + strArrayName[i] + "', 1, -1, -1)";                
                 command = new OleDbCommand(strSQL, connection);
-                command.ExecuteNonQuery();
-                connection.Close();
+                command.ExecuteNonQuery();                
 
-                strSQL = "select max(label_value_index) from label_values";
-                connection = new OleDbConnection(connectionString);
-                connection.Open();
+                strSQL = "select max(label_value_index) from label_values";                
                 command = new OleDbCommand(strSQL, connection);
                 ind = (int)command.ExecuteScalar();
                 ind++;
                 values[i] = ind;
-                connection.Close();
 
-
-                strSQL = "insert into label_values values (" + ind + ", '" + strArrayValue[i] + "', 0)";
-                connection = new OleDbConnection(connectionString);
-                connection.Open();
+                strSQL = "insert into label_values values (" + ind + ", '" + strArrayValue[i] + "', 0)";                
                 command = new OleDbCommand(strSQL, connection);
-                command.ExecuteNonQuery();
-                connection.Close();
+                command.ExecuteNonQuery();                
             }
-
+           
             //добовляем атарибуты в модели
             for (int j = 0; j < eqiupmentNames.Count(); j++)
             {
-                strSQL = "select max(label_line_number) from labels where linkage_index = " + eqiupmentNames[j];
-                connection = new OleDbConnection(connectionString);
-                connection.Open();
+                strSQL = "select max(label_line_number) from labels where linkage_index = " + eqiupmentNames[j];               
                 command = new OleDbCommand(strSQL, connection);
                 int ind = (int)((Int16)command.ExecuteScalar());
-                ind++;
-                connection.Close();
+                ind++;               
 
                 for (int i = 0; i < n; i++)
                 {
-                    strSQL = "insert into labels values (" + eqiupmentNames[j] + ", '" + names[i] + "', '" + values[i] + "', " + ind + ", 0)";
-                    connection = new OleDbConnection(connectionString);
-                    connection.Open();
+                    strSQL = "insert into labels values (" + eqiupmentNames[j] + ", '" + names[i] + "', '" + values[i] + "', " + ind + ", 0)";                    
                     command = new OleDbCommand(strSQL, connection);
-                    command.ExecuteNonQuery();
-                    connection.Close();
+                    command.ExecuteNonQuery();                    
                 }
+               
             }
+            connection.Close();
 
         }
     }

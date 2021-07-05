@@ -36,23 +36,21 @@ namespace Pethon
             this.tableAdapterManager = new Pethon.EQUI_PIPEDataSetTableAdapters.TableAdapterManager();
             this.label_valuesTableAdapter = new Pethon.EQUI_PIPEDataSetTableAdapters.label_valuesTableAdapter();
             this.labelsTableAdapter = new Pethon.EQUI_PIPEDataSetTableAdapters.labelsTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.atributesGridView1 = new System.Windows.Forms.DataGridView();
             this.labelsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelvaluesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.modelsBox1 = new System.Windows.Forms.ListBox();
             this.eQUIPIPEDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadModelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atributesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eQUI_PIPEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.all_sites_tableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atributesGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelvaluesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eQUIPIPEDataSetBindingSource)).BeginInit();
@@ -109,16 +107,16 @@ namespace Pethon
             // 
             this.labelsTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView1
+            // atributesGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(397, 91);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(524, 292);
-            this.dataGridView1.TabIndex = 2;
+            this.atributesGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.atributesGridView1.Location = new System.Drawing.Point(397, 91);
+            this.atributesGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.atributesGridView1.Name = "atributesGridView1";
+            this.atributesGridView1.RowHeadersWidth = 51;
+            this.atributesGridView1.RowTemplate.Height = 24;
+            this.atributesGridView1.Size = new System.Drawing.Size(524, 292);
+            this.atributesGridView1.TabIndex = 2;
             // 
             // labelsBindingSource
             // 
@@ -130,16 +128,16 @@ namespace Pethon
             this.labelvaluesBindingSource.DataMember = "label_values";
             this.labelvaluesBindingSource.DataSource = this.eQUI_PIPEDataSet;
             // 
-            // listBox1
+            // modelsBox1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(12, 91);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(363, 292);
-            this.listBox1.TabIndex = 3;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.modelsBox1.FormattingEnabled = true;
+            this.modelsBox1.ItemHeight = 16;
+            this.modelsBox1.Location = new System.Drawing.Point(12, 91);
+            this.modelsBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.modelsBox1.Name = "modelsBox1";
+            this.modelsBox1.Size = new System.Drawing.Size(363, 292);
+            this.modelsBox1.TabIndex = 3;
+            this.modelsBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // eQUIPIPEDataSetBindingSource
             // 
@@ -170,7 +168,7 @@ namespace Pethon
             // loadModelsToolStripMenuItem
             // 
             this.loadModelsToolStripMenuItem.Name = "loadModelsToolStripMenuItem";
-            this.loadModelsToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.loadModelsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.loadModelsToolStripMenuItem.Text = "Загрузить модели";
             this.loadModelsToolStripMenuItem.Click += new System.EventHandler(this.loadModelsToolStripMenuItem_Click);
             // 
@@ -185,17 +183,9 @@ namespace Pethon
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addToolStripMenuItem.Text = "Дополнить";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 391);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(363, 22);
-            this.textBox1.TabIndex = 7;
             // 
             // label1
             // 
@@ -217,20 +207,6 @@ namespace Pethon
             this.label2.TabIndex = 9;
             this.label2.Text = "Атрибуты";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(789, 391);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 38);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -238,10 +214,8 @@ namespace Pethon
             this.ClientSize = new System.Drawing.Size(944, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.modelsBox1);
+            this.Controls.Add(this.atributesGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -251,7 +225,7 @@ namespace Pethon
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.eQUI_PIPEDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.all_sites_tableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atributesGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelvaluesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eQUIPIPEDataSetBindingSource)).EndInit();
@@ -269,21 +243,19 @@ namespace Pethon
         private EQUI_PIPEDataSetTableAdapters.all_sites_tableTableAdapter all_sites_tableTableAdapter;
         private EQUI_PIPEDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private EQUI_PIPEDataSetTableAdapters.labelsTableAdapter labelsTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView atributesGridView1;
         private System.Windows.Forms.BindingSource labelsBindingSource;
         private EQUI_PIPEDataSetTableAdapters.label_valuesTableAdapter label_valuesTableAdapter;
         private System.Windows.Forms.BindingSource labelvaluesBindingSource;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox modelsBox1;
         private System.Windows.Forms.BindingSource eQUIPIPEDataSetBindingSource;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadModelsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atributesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
     }
 }
 
