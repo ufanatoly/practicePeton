@@ -17,12 +17,7 @@ namespace excelImport
         //Выбираем таблицу(лист).
         Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheet;
      
-
-        public String PrintDay()
-        {
-            return "Добрый день!";
-        }
-
+               
         public String[] LoadArrayNames(String strPathAtributes)
         {
             //String strPathAtributes[];
